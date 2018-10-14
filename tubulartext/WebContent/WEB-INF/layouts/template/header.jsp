@@ -27,8 +27,9 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
-                <div class="row" style="background-color:#404850;">
+                <div class="row" style="background-color:#404850;">                	
                     <nav>
+                    	<div class="col-lg-4">
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="#" style="color:#F0C060;">Store Front</a>
@@ -40,15 +41,20 @@
                                 <a class="nav-link" href="#" style="color:#F0C060;">Shopping Cart</a>
                             </li>
                         </ul>
+                        </div>
+                        <div class="col-lg-4">
                         <form class="form-inline">
                             <input class="form-control mr-sm-2" type="text" style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
                             <button class="btn btn-primary my-2 my-sm-0" type="submit" style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
                                 Search
                             </button>
                         </form>
+                        </div>
+                        <div class="col-lg-4">
                         <button type="button" class="btn btn-warning" style="color:#F0C060;border-color:#F0C060;background-color:#404850;" data-toggle="modal" data-target="#exampleModal">
                             Login/Register
                         </button>
+                        </div>
                     </nav>
                 </div>
 			</div>

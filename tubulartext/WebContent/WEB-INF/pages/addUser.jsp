@@ -25,7 +25,7 @@
 				<td><form:input path="username" type="text" name="username" placeholder="Username" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;"/><form:errors path="username"/></td>				
 			</tr>
 			<tr>
-				<td><form:input path="password" type="text" name="password" placeholder="Password" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;"/><form:errors path="password"/></td>
+				<td><form:input path="password" type="password" name="password" placeholder="Password" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;"/><form:errors path="password"/></td>
 			</tr>						
 			<tr>				
 				<td><input type="submit" name="Login" value="Login" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;"></td>				
