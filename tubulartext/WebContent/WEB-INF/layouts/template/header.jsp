@@ -9,21 +9,23 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 <!-- Version 1 -->
-<!-- 
+
                                 <a href="#" style="color:#0ABDC6;">Store Front</a>
-                                <a href="#" style="color:#0ABDC6;">Wishlist</a> Might wanna replace with badge, go to layoutit
+                                <a href="#" style="color:#0ABDC6;">Wishlist</a> <!--Might wanna replace with badge, go to layoutit -->
                                 <a href="#" style="color:#0ABDC6;">Shopping Cart</a>
                         <form class="form-inline">
                             <input type="text" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;">
                             <button type="submit" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;">
                                 Search
                             </button>
-                        </form>                        
+                        </form>   
+                        <!--                     
                         <button type="button" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;">
                             Login/Register
                         </button>
                          -->
-<!-- Version 2 -->
+                        
+<!-- Version 2 
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
@@ -35,7 +37,7 @@
                                 <a class="nav-link" href="#" style="color:#F0C060;">Store Front</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" style="color:#F0C060;">Wishlist</a> <!--Might wanna replace with badge, go to layoutit-->
+                                <a class="nav-link" href="#" style="color:#F0C060;">Wishlist</a> <!--Might wanna replace with badge, go to layoutit
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" style="color:#F0C060;">Shopping Cart</a>
@@ -60,7 +62,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- Fancy Drop down for the login -->
+	<!-- Fancy Drop down for the login 
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -99,6 +101,6 @@
             </div>
         </div>
     </div>
-                        
+-->        
                         
                         

@@ -1,11 +1,22 @@
 package com.gcu.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class product {
 
+	@NotNull(message="Name cannot be Null")
+	@Size(min=4, max=20, message="Name must be at least 4 characters long and less than 20 characters")
 	private String name;
+	@NotNull(message="Description cannot be Null")
+	@Size(min=4, max=300, message="Description must be at least 4 characters long and less than 300 characters")
 	private String description;
+	@NotNull(message="Price cannot be Null")
+	@Size(min=1, max=10, message="Name must be at least 1 characters long and less than 10 characters")
 	private String price;
+	@NotNull(message="A .png or .jpg is required")
 	private String imageFilePath;
+	@NotNull(message="A .txt is required")
 	private String textFilePath;
 	
 	public product() {
