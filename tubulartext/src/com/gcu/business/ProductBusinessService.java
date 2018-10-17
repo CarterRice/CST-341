@@ -4,7 +4,7 @@ public class ProductBusinessService implements ProductBusinessInterface{
 
 	@Override
 	public void test() {
-		// TODO Auto-generated method stub
+		System.out.println("Taking in a product object!"); 
 		
 	}
 

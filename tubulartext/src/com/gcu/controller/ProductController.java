@@ -18,12 +18,12 @@ import com.gcu.model.product;
 @RequestMapping("/product")
 public class ProductController {
 
-	/*ProductBusinessInterface ProductService;
+	ProductBusinessInterface ProductService;
 	
 	@Autowired
 	public void setProductService(ProductBusinessInterface productService) {
 		this.ProductService = productService;
-	}*/
+	}
 	
 	@RequestMapping(path="/add", method=RequestMethod.GET)
 	public ModelAndView displayForm() {
@@ -34,8 +34,8 @@ public class ProductController {
 	public ModelAndView addProduct(@Valid @ModelAttribute("addProduct") product newProduct, BindingResult result) {			
 		if(result.hasErrors()) {
 			return new ModelAndView("addProduct", "newProduct", newProduct);
-		}else {
-			//ProductService.init();
+		}else {			
+			ProductService.test();
 			return new ModelAndView("storefront", "newProduct", newProduct);						
 		}
 	}

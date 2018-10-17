@@ -4,7 +4,7 @@ public class UserRegisterService implements UserBusinessInterface {
 
 	@Override
 	public void test() {
-		// TODO Auto-generated method stub
+		System.out.println("User is now registered.");
 		
 	}
 

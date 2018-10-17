@@ -8,6 +8,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import com.gcu.business.ProductBusinessInterface;
 import com.gcu.business.ProductBusinessService;
 import com.gcu.business.UserBusinessInterface;
+import com.gcu.business.UserLoginService;
 import com.gcu.business.UserRegisterService;
 import com.gcu.controller.ProductController;
 import com.gcu.controller.UserController;
@@ -27,14 +28,14 @@ public class ApplicationConfiguration {
 	
 	@Bean(name="UserRegisterService", initMethod="init", destroyMethod="destroy")
 	@Scope(value="request", proxyMode=ScopedProxyMode.TARGET_CLASS)
-	public UserBusinessInterface getRegisterService() {
+	public UserBusinessInterface getUserRegisterService() {
 		return new UserRegisterService();
 	}
 	
 	@Bean(name="UserLoginService", initMethod="init", destroyMethod="destroy")
 	@Scope(value="session", proxyMode=ScopedProxyMode.TARGET_CLASS)
-	public UserBusinessInterface getLoginService() {
-		return new UserRegisterService();
+	public UserBusinessInterface getUserLoginService() {
+		return new UserLoginService();
 	}
 	
 	@Bean(name="ProductService", initMethod="init", destroyMethod="destroy")

@@ -4,13 +4,12 @@ public class UserLoginService implements UserBusinessInterface {
 
 	@Override
 	public void test() {
-		// TODO Auto-generated method stub
+		System.out.println("User is now logged in.");
 		
 	}
 
 	@Override
-	public void init() {
-		// TODO Auto-generated method stub
+	public void init() {		
 		
 	}
 
