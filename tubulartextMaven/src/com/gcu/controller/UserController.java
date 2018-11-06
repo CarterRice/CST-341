@@ -36,12 +36,12 @@ public class UserController {
 							
 		
 		if(result.hasErrors()) {
-			return new ModelAndView("addUser", "registerUser", newUser);
+			return new ModelAndView("addUser", "registerUser", newUser).addObject("user", new User("",""));
 		}else {
 			if(UserRegisterService.test(newUser) == true) {
-				return new ModelAndView("addUser", "registerUser", newUser);
+				return new ModelAndView("addUser", "registerUser", newUser).addObject("user", new User("",""));
 			}else {
-				return new ModelAndView("addUser", "registerUser", newUser);
+				return new ModelAndView("addUser", "registerUser", newUser).addObject("user", new User("",""));
 			}
 		}			
 		

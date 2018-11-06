@@ -16,19 +16,19 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-	<h2 style="color:#0ABDC6;">Login / Register</h2>
+	<h2 style="color:#B0BCBA;">Login / Register</h2>
 	
 	<div style="display:inline-block;">
 	<form:form method="POST" modelAttribute="user" action="loginUser">
 		<table>
 			<tr>									
-				<td><form:input path="username" type="text" name="username" placeholder="Username" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;"/><form:errors path="username"/></td>				
+				<td><form:input path="username" type="text" name="username" placeholder="Username" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="username"/></td>				
 			</tr>
 			<tr>
-				<td><form:input path="password" type="password" name="password" placeholder="Password" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;"/><form:errors path="password"/></td>
+				<td><form:input path="password" type="password" name="password" placeholder="Password" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="password"/></td>
 			</tr>						
 			<tr>				
-				<td><input type="submit" name="Login" value="Login" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;"></td>				
+				<td><input type="submit" name="Login" value="Login" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"></td>				
 			</tr>
 		</table>
 		<br/>
@@ -39,22 +39,22 @@
 	<form:form method="POST" modelAttribute="registerUser" action="registerUser">
 	<table>
 		<tr>
-		<td><form:input path="username" type="text" name="username" placeholder="Username" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;"/><form:errors path="username"/></td>
+		<td><form:input path="username" type="text" name="username" placeholder="Username" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="username"/></td>
 		</tr>
 		<tr>
-		<td><form:input path="password" type="text" name="password" placeholder="Password" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;"/><form:errors path="password"/></td>
+		<td><form:input path="password" type="text" name="password" placeholder="Password" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="password"/></td>
 		</tr>
 		<tr>
-		<td><form:input path="firstName" type="text" name="firstname" placeholder="First name" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;"/><form:errors path="firstName"/></td>
+		<td><form:input path="firstName" type="text" name="firstname" placeholder="First name" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="firstName"/></td>
 		</tr>
 		<tr>
-		<td><form:input path="lastName" type="text" name="lastname" placeholder="Last name" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;"/><form:errors path="lastName"/></td>
+		<td><form:input path="lastName" type="text" name="lastname" placeholder="Last name" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="lastName"/></td>
 		</tr>
 		<tr>
-		<td><form:input path="email" type="text" name="email" placeholder="Email" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;"/><form:errors path="email"/></td>
+		<td><form:input path="email" type="text" name="email" placeholder="Email" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="email"/></td>
 		</tr>
 		<tr>
-		<td><input type="submit" name="Register" value="Register" style="color:#0ABDC6;border-color:#0ABDC6;background-color:#091833;margin-left:53%;"></td>
+		<td><input type="submit" name="Register" value="Register" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;margin-left:53%;"></td>
 		</tr>
 		</table>
 		<form:errors path="*"/>	

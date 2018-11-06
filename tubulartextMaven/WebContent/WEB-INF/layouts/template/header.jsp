@@ -12,22 +12,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
-    		<nav class="navbar navbar-inverse" style="background-color:#404850;">
-                <div class="container-fluid" style="background-color:#404850;">
+    		<nav class="navbar navbar-inverse" style="background-color:#2B5A88;">
+                <div class="container-fluid" style="background-color:#2B5A88;">
                     <div class="navbar-header">
-                        <a class="navbar-brand" style="color:#F0C060; padding-left: 20px; padding-top:16px;" href="#">Store Front</a>
+                        <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px; padding-top:16px;" href="#">Store Front</a>
                     </div>
                     <!--<div class="navbar-header">
-                    <a class="navbar-brand" style="color:#F0C060; padding-left: 20px; padding-top:16px;" href="#">Shopping Cart</a>
+                    <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px; padding-top:16px;" href="#">Shopping Cart</a>
                     </div>
                     <div class="navbar-header">
-                    <a class="navbar-brand" style="color:#F0C060; padding-left: 20px; padding-top:16px;" href="#">Wish List</a>
+                    <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px; padding-top:16px;" href="#">Wish List</a>
                     </div>-->
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" style="color:#F0C060; padding-left: 20px; font-size: larger;" href="#">Admin</a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" style="color:#B0BCBA; padding-left: 20px; font-size: larger;" href="#">Admin</a>
                             <ul class="dropdown-menu">                            	
-                                <li><a data-toggle="modal" data-target="#addnewModal" href="#">Add New</a></li>
+                                <li><a data-toggle="modal" data-target="#addnewModal" href="../../product/add">Add New</a></li>
                                 <li><a data-toggle="modal" data-target="#updateModal" href="#">Update</a></li>
                                 <li><a data-toggle="modal" data-target="#deleteModal" href="#">Delete</a></li>
                             </ul>
@@ -35,12 +35,12 @@
                     </ul>
                     <form class="navbar-form navbar-left" action="controllers/searchHandler.php">
                         <div class="form-group">
-                            <input style=" background-color:#808088;color:#F0C060; padding-left: 20px;" type="text" class="form-control">
+                            <input style=" background-color:#808088;color:#B0BCBA; padding-left: 20px;" type="text" class="form-control">
                         </div>
-                        <button style="background-color:#808088; color:#F0C060; padding-left: 20px; font-size: larger;" type="submit" class="btn btn-default">Search</button>
+                        <button style="background-color:#808088; color:#B0BCBA; padding-left: 20px; font-size: larger;" type="submit" class="btn btn-default">Search</button>
                     </form><!--
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a style="color:#F0C060; padding-left: 20px; font-size: larger;" data-toggle="modal" data-target="#loginregisterModal" href="#"><span style="color:#F0C060; padding-left: 20px;" class="glyphicon glyphicon-log-in"></span> Login/Register</a></li>
+                        <li><a style="color:#B0BCBA; padding-left: 20px; font-size: larger;" data-toggle="modal" data-target="#loginregisterModal" href="#"><span style="color:#B0BCBA; padding-left: 20px;" class="glyphicon glyphicon-log-in"></span> Login/Register</a></li>
                     </ul> -->
                 </div>
             </nav>
@@ -49,7 +49,7 @@
             <div class="modal fade" id="loginregisterModal" tabindex="-1" role="dialog" aria-labelledby="loginregisterModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header" style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
+                        <div class="modal-header" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
                             <h5 class="modal-title" id="loginregisterModalLabel">Login/Register</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -60,26 +60,26 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <form action="controllers/loginHandler.php" method="POST">
-                                            <input type="text" name="username" placeholder="Username" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"><br><br>
-                                            <input type="password" name="password" placeholder="Password" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"><br><br>
-                                            <input type="submit" name="Login" value="Login" class="btn btn-primary"style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
+                                            <input type="text" name="username" placeholder="Username" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"><br><br>
+                                            <input type="password" name="password" placeholder="Password" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"><br><br>
+                                            <input type="submit" name="Login" value="Login" class="btn btn-primary"style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
                                         </form>
                                     </div>
                                     <div class="col-6">
                                         <form action="controllers/registerHandler.php" method="POST">
-                                            <input type="text" name="username" placeholder="Username" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"><br><br>
-                                            <input type="text" name="password" placeholder="Password" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"><br><br>
-                                            <input type="text" name="firstname" placeholder="First name" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"><br><br>
-                                            <input type="text" name="lastname" placeholder="Last name" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"><br><br>
-                                            <input type="text" name="email" placeholder="Email" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"><br><br>
-                                            <input type="submit" name="Register" value="Register" class="btn btn-primary"style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
+                                            <input type="text" name="username" placeholder="Username" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"><br><br>
+                                            <input type="text" name="password" placeholder="Password" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"><br><br>
+                                            <input type="text" name="firstname" placeholder="First name" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"><br><br>
+                                            <input type="text" name="lastname" placeholder="Last name" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"><br><br>
+                                            <input type="text" name="email" placeholder="Email" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"><br><br>
+                                            <input type="submit" name="Register" value="Register" class="btn btn-primary"style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer" style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"style="color:#F0C060;border-color:#F0C060;background-color:#404850;">Close</button>
+                        <div class="modal-footer" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">Close</button>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
             <div class="modal fade" id="addnewModal" tabindex="-1" role="dialog" aria-labelledby="addnewModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header" style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
+                        <div class="modal-header" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
                             <h5 class="modal-title" id="addnewModalLabel">Add New</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -98,21 +98,11 @@
                         <div class="modal-body" style="background-color:#808088;">
                             <div class="container">
                                 <div class="row">
-                                    <form:form method="POST" modelAttribute="product" action="../product/addProduct">
-                                        <form:input path="name" type="text" name="name" placeholder="Name" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"></form:input><form:errors path="name"/><br><br>
-                                        <form:input path="description" type="text" name="description" placeholder="Description" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"></form:input><form:errors path="description"/><br><br>
-                                        <form:input path="price" type="text" name="price" placeholder="Price" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"></form:input><form:errors path="price"/><br><br>
-                                        Select image file to upload:
-                                        <form:input path="imageFilePath" type="file" name="imageFile" id="imageFile" accept=".jpg,.png"></form:input><form:errors path="imageFilePath"/><br><br>
-                                        Select text file to upload:
-                                        <form:input path="textFilePath" type="file" name="textFile" id="textFile" accept=".txt"></form:input><form:errors path="textFilePath"/><br><br>
-                                        <input type="submit" name="Login" value="Login" class="btn btn-primary"style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
-                                    </form:form>
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer" style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"style="color:#F0C060;border-color:#F0C060;background-color:#404850;">Close</button>
+                        <div class="modal-footer" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">Close</button>
                         </div>
                     </div>
                 </div>
@@ -122,7 +112,7 @@
             <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header" style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
+                        <div class="modal-header" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
                             <h5 class="modal-title" id="updateModalLabel">Update</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -142,8 +132,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer" style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"style="color:#F0C060;border-color:#F0C060;background-color:#404850;">Close</button>
+                        <div class="modal-footer" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">Close</button>
                         </div>
                     </div>
                 </div>
@@ -153,7 +143,7 @@
             <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header" style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
+                        <div class="modal-header" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
                             <h5 class="modal-title" id="deleteModalLabel">Login/Register</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -173,28 +163,28 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer" style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"style="color:#F0C060;border-color:#F0C060;background-color:#404850;">Close</button>
+                        <div class="modal-footer" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
 
 <!--
-<nav class="navbar navbar-inverse" style="background-color:#404850;">
-                <div class="container-fluid" style="background-color:#404850;">
+<nav class="navbar navbar-inverse" style="background-color:#2B5A88;">
+                <div class="container-fluid" style="background-color:#2B5A88;">
                     <div class="navbar-header">
-                        <a class="navbar-brand" style="color:#F0C060; padding-left: 20px;" href="#">Store Front</a>
+                        <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px;" href="#">Store Front</a>
                     </div>
                     <div class="navbar-header">
-                    <a class="navbar-brand" style="color:#F0C060; padding-left: 20px;" href="#">Shopping Cart</a>
+                    <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px;" href="#">Shopping Cart</a>
                     </div>
                     <div class="navbar-header">
-                    <a class="navbar-brand" style="color:#F0C060; padding-left: 20px;" href="#">Wish List</a>
+                    <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px;" href="#">Wish List</a>
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" style="color:#F0C060; padding-left: 20px;" href="#">Admin</a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" style="color:#B0BCBA; padding-left: 20px;" href="#">Admin</a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Add New</a></li>
                                 <li><a href="#">Update</a></li>
@@ -204,12 +194,12 @@
                     </ul>
                     <form class="navbar-form navbar-left" action="controllers/searchHandler.php">
                         <div class="form-group">
-                            <input style=" background-color:#808088;color:#F0C060; padding-left: 20px;" type="text" class="form-control">
+                            <input style=" background-color:#808088;color:#B0BCBA; padding-left: 20px;" type="text" class="form-control">
                         </div>
-                        <button style="background-color:#808088; color:#F0C060; padding-left: 20px;" type="submit" class="btn btn-default">Search</button>
+                        <button style="background-color:#808088; color:#B0BCBA; padding-left: 20px;" type="submit" class="btn btn-default">Search</button>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a style="color:#F0C060; padding-left: 20px;" href="#"><span style="color:#F0C060; padding-left: 20px;" class="glyphicon glyphicon-log-in"></span> Login/Register</a></li>
+                        <li><a style="color:#B0BCBA; padding-left: 20px;" href="#"><span style="color:#B0BCBA; padding-left: 20px;" class="glyphicon glyphicon-log-in"></span> Login/Register</a></li>
                     </ul>
                 </div>
             </nav>       

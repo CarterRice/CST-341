@@ -9,7 +9,7 @@ public class UserRegisterService implements RegisterBusinessInterface {
 
 	@SuppressWarnings("rawtypes")
 	@Autowired
-	DataAccessInterface dao;
+	DataAccessInterface<registerUser> dao;
 	
 	@Override
 	public boolean test(registerUser u) {

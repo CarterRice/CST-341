@@ -36,7 +36,7 @@ public class ProductController {
 			return new ModelAndView("storefront", "newProduct", newProduct);
 		}else {			
 			if(ProductService.test(newProduct) == true) {
-				return new ModelAndView("storefront", "newProduct", newProduct);
+				return new ModelAndView("newStoreFront", "newProduct", newProduct);
 			}else {
 				return new ModelAndView("storefront", "newProduct", newProduct);
 			}

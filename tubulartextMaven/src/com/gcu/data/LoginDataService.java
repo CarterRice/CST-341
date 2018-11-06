@@ -43,7 +43,7 @@ public class LoginDataService implements DataAccessInterface<User> {
 				count++;
 			}
 			
-			if(count > 1) {
+			if(count != 1) {
 				return false;
 			}else {
 				return true;

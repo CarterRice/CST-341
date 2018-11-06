@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.gcu.model.User;
@@ -60,6 +61,12 @@ public class RegisterDataService implements DataAccessInterface<registerUser> {
 	public boolean loginCheck(User u) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	@Autowired
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+		this.jdbcTemplateObject = new JdbcTemplate(dataSource);
 	}
 
 }

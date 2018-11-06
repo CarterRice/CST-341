@@ -9,7 +9,7 @@ public class UserLoginService implements UserBusinessInterface {
 
 	@SuppressWarnings("rawtypes")
 	@Autowired
-	DataAccessInterface dao;
+	DataAccessInterface<User> dao;
 	
 	@Override
 	public boolean test(User u) {	

@@ -12,18 +12,18 @@
 	<title>Tubular Text</title>
 </head>
 
-<body style="background-color:#133E7C">
+<body style="background-color:#4C7394">
 	<!-- Header -->
-	<div style="background-color:#133E7C">
+	<div style="background-color:#4C7394">
 	<tiles:insertAttribute name="header" />
 	</div>
 	<!-- Body Page -->
-	<div align="center" style="background-color:#133E7C">
+	<div align="center" style="background-color:#4C7394">
 		<tiles:insertAttribute name="body" />
 	</div>
 
 	<!-- Footer Page -->
-	<div style="background-color:#133E7C">
+	<div style="background-color:#4C7394">
 	<tiles:insertAttribute name="footer" />
 	</div>
 </body>

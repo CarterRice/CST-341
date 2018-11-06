@@ -9,7 +9,7 @@ public class ProductBusinessService implements ProductBusinessInterface{
 
 	@SuppressWarnings("rawtypes")
 	@Autowired
-	DataAccessInterface dao;
+	DataAccessInterface<product> dao;
 	
 	@Override
 	public boolean test(product p) {

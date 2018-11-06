@@ -16,6 +16,11 @@ import com.gcu.controller.ProductController;
 import com.gcu.controller.UserController;
 import com.gcu.data.DataAccessInterface;
 import com.gcu.data.LoginDataService;
+import com.gcu.data.ProductDataService;
+import com.gcu.data.RegisterDataService;
+import com.gcu.model.User;
+import com.gcu.model.product;
+import com.gcu.model.registerUser;
 
 @Configuration
 public class ApplicationConfiguration {
@@ -42,16 +47,28 @@ public class ApplicationConfiguration {
 		return new UserLoginService();
 	}
 	
-	@Bean(name="ProductService", initMethod="init", destroyMethod="destroy")
+	@Bean(name="ProductBusinessService", initMethod="init", destroyMethod="destroy")
 	@Scope(value="request", proxyMode=ScopedProxyMode.TARGET_CLASS)
-	public ProductBusinessInterface getProductService() {
+	public ProductBusinessInterface getProductBusinessService() {
 		return new ProductBusinessService();
 	}
 	
 	@Bean(name="loginDataService")
 	@Scope(value="session", proxyMode=ScopedProxyMode.TARGET_CLASS)
-	public DataAccessInterface getLoginDataService() {
+	public DataAccessInterface<User> getLoginDataService() {
 		return new LoginDataService();
+	}
+	
+	@Bean(name="productDataService")
+	@Scope(value="session", proxyMode=ScopedProxyMode.TARGET_CLASS)
+	public DataAccessInterface<product> getProductDataService() {
+		return new ProductDataService();
+	}
+	
+	@Bean(name="registerDataService")
+	@Scope(value="session", proxyMode=ScopedProxyMode.TARGET_CLASS)
+	public DataAccessInterface<registerUser> getRegisterDataService() {
+		return new RegisterDataService();
 	}
 	
 	@Bean(name="dataSource", destroyMethod = "close")
