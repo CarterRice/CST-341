@@ -1,5 +1,7 @@
 package com.gcu.business;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.gcu.data.DataAccessInterface;
@@ -27,6 +29,19 @@ public class ProductBusinessService implements ProductBusinessInterface{
 	public void destroy() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public List<product> findAll(){
+		return dao.findAll();
+		
+	}
+	
+	public boolean update(product p) {
+		return dao.update(p);
+	}
+	
+	public boolean delete(product p) {
+		return dao.delete(p);
 	}
 
 }

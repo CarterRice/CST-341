@@ -5,6 +5,7 @@ import javax.validation.constraints.Size;
 
 public class product {
 
+	private int id;
 	@NotNull(message="Name cannot be Null")
 	@Size(min=4, max=20, message="Name must be at least 4 characters long and less than 20 characters")
 	private String name;
@@ -20,6 +21,7 @@ public class product {
 	private String textFilePath;
 	
 	public product() {
+		this.id = 0;
 		this.name = "";
 		this.description = "";
 		this.price = "";
@@ -27,12 +29,21 @@ public class product {
 		this.textFilePath = "";
 	}
 	
-	public product(String Name, String Description, String Price, String ImageFilePath, String TextFilePath) {
+	public product(int Id, String Name, String Description, String Price, String ImageFilePath, String TextFilePath) {
+		this.id = Id;
 		this.name = Name;
 		this.description = Description;
 		this.price = Price;
 		this.imageFilePath = ImageFilePath;
 		this.textFilePath = TextFilePath;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {

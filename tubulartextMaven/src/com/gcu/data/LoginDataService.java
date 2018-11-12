@@ -9,7 +9,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import com.gcu.model.User;
-import com.gcu.model.registerUser;
 
 public class LoginDataService implements DataAccessInterface<User> {
 	

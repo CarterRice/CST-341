@@ -1,5 +1,8 @@
 package com.gcu.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +30,25 @@ public class ProductController {
 	
 	@RequestMapping(path="/add", method=RequestMethod.GET)
 	public ModelAndView displayForm() {
-		return new ModelAndView("addProduct", "product", new product("","","","",""));
+		return new ModelAndView("addProduct", "product", new product(0,"","","","",""));
+	}
+	
+	@RequestMapping(path="/view", method=RequestMethod.GET)
+	public ModelAndView displayProducts() {
+		List<product> products = new ArrayList<product>();
+		
+		products = ProductService.findAll();
+		
+		return new ModelAndView("newStoreFront").addObject("products", products);
+	}
+	
+	@RequestMapping(path="/updateView", method=RequestMethod.GET)
+	public ModelAndView displayUpdateForm() {
+		List<product> products = new ArrayList<product>();
+		
+		products = ProductService.findAll();
+		
+		return new ModelAndView("updateProduct").addObject("products", products);
 	}
 	
 	@RequestMapping(path="/newProduct", method=RequestMethod.POST)
@@ -36,9 +57,30 @@ public class ProductController {
 			return new ModelAndView("storefront", "newProduct", newProduct);
 		}else {			
 			if(ProductService.test(newProduct) == true) {
-				return new ModelAndView("newStoreFront", "newProduct", newProduct);
+				List<product> products = new ArrayList<product>();
+				
+				products = ProductService.findAll();
+				
+				return new ModelAndView("newStoreFront").addObject("products", products);
 			}else {
 				return new ModelAndView("storefront", "newProduct", newProduct);
+			}
+		}
+	}
+	
+	@RequestMapping(path="/updateProduct", method=RequestMethod.POST)
+	public ModelAndView updateProduct(@Valid @ModelAttribute("updateProduct") product updateProduct, BindingResult result) {
+		if(result.hasErrors()) {
+			return new ModelAndView("storefront", "newProduct", updateProduct);
+		}else {			
+			if(ProductService.update(updateProduct) == true) {
+				List<product> products = new ArrayList<product>();
+				
+				products = ProductService.findAll();
+				
+				return new ModelAndView("newStoreFront").addObject("products", products);
+			}else {
+				return new ModelAndView("storefront", "newProduct", updateProduct);
 			}
 		}
 	}

@@ -15,7 +15,7 @@
     		<nav class="navbar navbar-inverse" style="background-color:#2B5A88;">
                 <div class="container-fluid" style="background-color:#2B5A88;">
                     <div class="navbar-header">
-                        <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px; padding-top:16px;" href="#">Store Front</a>
+                        <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px; padding-top:16px;" href="/tubulartextMaven/product/view">Store Front</a>
                     </div>
                     <!--<div class="navbar-header">
                     <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px; padding-top:16px;" href="#">Shopping Cart</a>
@@ -27,9 +27,8 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" style="color:#B0BCBA; padding-left: 20px; font-size: larger;" href="#">Admin</a>
                             <ul class="dropdown-menu">                            	
-                                <li><a data-toggle="modal" data-target="#addnewModal" href="../../product/add">Add New</a></li>
-                                <li><a data-toggle="modal" data-target="#updateModal" href="#">Update</a></li>
-                                <li><a data-toggle="modal" data-target="#deleteModal" href="#">Delete</a></li>
+                                <li><a href="/tubulartextMaven/product/add">Add New</a></li>
+                                <li><a href="/tubulartextMaven/product/updateView">Update/Delete Product</a></li>                                
                             </ul>
                         </li>
                     </ul>
@@ -84,92 +83,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- This is Add New modal -->
-            <div class="modal fade" id="addnewModal" tabindex="-1" role="dialog" aria-labelledby="addnewModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
-                            <h5 class="modal-title" id="addnewModalLabel">Add New</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body" style="background-color:#808088;">
-                            <div class="container">
-                                <div class="row">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- This is Update modal -->
-            <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
-                            <h5 class="modal-title" id="updateModalLabel">Update</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body" style="background-color:#808088;">
-                            <div class="container">
-                                <div class="row">
-                                    <table class="table">
-                                        <tr>
-                                            <th>ID</th><th>Name</th><th>Description</th><th>Price</th><th>Image</th><th>Text File</th>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td><td>Mock</td><td>Mock</td><td>$9.99</td><td>141D2D3D5008EB6425.png</td><td>funFact.txt</td><td><form action="controllers/updateProduct.php" method="POST"><input name="mock" type="hidden" value="1"/><input name="Submit" type="submit" value="update"/></form></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- This is Delete modal -->
-            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
-                            <h5 class="modal-title" id="deleteModalLabel">Login/Register</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body" style="background-color:#808088;">
-                            <div class="container">
-                                <div class="row">
-                                    <table class="table">
-                                        <tr>
-                                            <th>ID</th><th>Name</th><th>Description</th><th>Price</th><th>Image</th><th>Text File</th>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td><td>Mock</td><td>Mock</td><td>$9.99</td><td>141D2D3D5008EB6425.png</td><td>funFact.txt</td><td><form action="controllers/deleteProduct.php" method="POST"><input name="mock" type="hidden" value="1"/><input name="Submit" type="submit" value="delete"/></form></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
 <!--
 <nav class="navbar navbar-inverse" style="background-color:#2B5A88;">
                 <div class="container-fluid" style="background-color:#2B5A88;">

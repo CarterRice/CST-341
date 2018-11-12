@@ -4,13 +4,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-    <h2>Welcome to the Store Front</h2>
-	<table>
-	
-		<tr>
-			<th><label>New Added Product!</label></th>
-		</tr>		
-	</table>
+    <h2>Update a Product</h2>
 	<div class="container">
 		<div class="row">
 			<c:forEach var="product" items="${products}">
@@ -24,14 +18,14 @@
 					</p>
 					<div class="row">
 						<div class="col-md-6">
-							<button type="button" class="btn btn-primary btn-block" style="color:#2B5A88;border-color:#2B5A88;background-color:#B0BCBA;" formaction="textFiles/computerJoke.txt">
-								Add to Cart
-							</button>
+							<a href="/tubulartextMaven/product/update/${product}"><button type="button" class="btn btn-primary btn-block" style="color:#2B5A88;border-color:#2B5A88;background-color:#B0BCBA;" formaction="textFiles/computerJoke.txt">
+								Update
+							</button></a>
 						</div>
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-secondary btn-block" style="color:#808088;border-color:#808088;background-color:#2B5A88;" formaction="textFiles/computerJoke.txt">
-								Add to Wishlist
-							</button>
+							<a href="/tubulartextMaven/product/delete/${product}"><button type="button" class="btn btn-outline-secondary btn-block" style="color:#808088;border-color:#808088;background-color:#2B5A88;" formaction="textFiles/computerJoke.txt">
+								Delete
+							</button></a>
 						</div>
 					</div>                  
 		   		</div>
