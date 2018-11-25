@@ -58,8 +58,8 @@ public class UserController {
 	public ModelAndView loginUser(@Valid @ModelAttribute("user") User User, BindingResult result) {
 					
 		
-		if(result.hasErrors()) {
-			return new ModelAndView("addUser", "user", User).addObject("registerUser",new registerUser("","","","",""));
+		if(result.hasErrors()) {			
+			return new ModelAndView("addUser", "user", User).addObject("registerUser",new registerUser("","","","",""));		
 		}else {
 			if(UserLoginService.test(User) == true) {
 				return new ModelAndView("storefront", "user", User);

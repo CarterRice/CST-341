@@ -13,5 +13,7 @@ public interface ProductBusinessInterface {
 	public void destroy();
 	public List<product> findAll();
 	public boolean update(product updateProduct);
+	public boolean delete(int argument);
+	public product findById(int id);
 	
 }

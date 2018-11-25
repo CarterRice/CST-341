@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -69,7 +70,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping(path="/updateProduct", method=RequestMethod.POST)
-	public ModelAndView updateProduct(@Valid @ModelAttribute("updateProduct") product updateProduct, BindingResult result) {
+	public ModelAndView updateProduct(@Valid @ModelAttribute("product") product updateProduct, BindingResult result) {
 		if(result.hasErrors()) {
 			return new ModelAndView("storefront", "newProduct", updateProduct);
 		}else {			
@@ -82,6 +83,31 @@ public class ProductController {
 			}else {
 				return new ModelAndView("storefront", "newProduct", updateProduct);
 			}
+		}
+	}
+	
+	@RequestMapping(path="/update/{argument}", method=RequestMethod.GET)
+	public ModelAndView updateFormProduct(@PathVariable("argument") String argument) {
+		int id = Integer.parseInt(argument);
+		
+		product p = ProductService.findById(id);
+		
+		//product prod = new product(101,"NewTest","NewTest","5","FAIL","FAIL");
+		
+		return new ModelAndView("updateProductForm", "product", p);
+	}
+	
+	@RequestMapping(path="/delete/{argument}", method=RequestMethod.GET)
+	public ModelAndView deleteProduct(@PathVariable("argument") String argument) {
+		int id = Integer.parseInt(argument);
+		if(ProductService.delete(id) == true) {
+			List<product> products = new ArrayList<product>();
+			
+			products = ProductService.findAll();
+			
+			return new ModelAndView("newStoreFront").addObject("products", products);
+		}else {
+			return new ModelAndView("storefront");
 		}
 	}
 }

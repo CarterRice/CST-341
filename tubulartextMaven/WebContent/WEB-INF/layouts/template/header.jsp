@@ -11,18 +11,20 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Library used for the jQuery shake effect -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<!-- JQuery Validation -->
+  	<script src="js/jquery.validate.js"></script>
+    
     
     		<nav class="navbar navbar-inverse" style="background-color:#2B5A88;">
                 <div class="container-fluid" style="background-color:#2B5A88;">
                     <div class="navbar-header">
                         <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px; padding-top:16px;" href="/tubulartextMaven/product/view">Store Front</a>
-                    </div>
-                    <!--<div class="navbar-header">
-                    <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px; padding-top:16px;" href="#">Shopping Cart</a>
-                    </div>
-                    <div class="navbar-header">
-                    <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px; padding-top:16px;" href="#">Wish List</a>
-                    </div>-->
+                    </div>                    
+                    		            			                           
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" style="color:#B0BCBA; padding-left: 20px; font-size: larger;" href="#">Admin</a>
@@ -31,18 +33,34 @@
                                 <li><a href="/tubulartextMaven/product/updateView">Update/Delete Product</a></li>                                
                             </ul>
                         </li>
-                    </ul>
+                    </ul>                    
                     <form class="navbar-form navbar-left" action="controllers/searchHandler.php">
                         <div class="form-group">
                             <input style=" background-color:#808088;color:#B0BCBA; padding-left: 20px;" type="text" class="form-control">
                         </div>
                         <button style="background-color:#808088; color:#B0BCBA; padding-left: 20px; font-size: larger;" type="submit" class="btn btn-default">Search</button>
-                    </form><!--
+                    </form>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a style="color:#B0BCBA; padding-left: 20px; font-size: larger;" data-toggle="modal" data-target="#loginregisterModal" href="#"><span style="color:#B0BCBA; padding-left: 20px;" class="glyphicon glyphicon-log-in"></span> Login/Register</a></li>
-                    </ul> -->
+                        <li><a style="color:#B0BCBA; padding-left: 20px; font-size: larger;" data-toggle="modal" data-target="#shoppingCartModal" href="#"><span id="shoppingBadge" class="badge" style="color:#2B5A88;">0</span> Shopping Cart</a></li>
+                    </ul>
                 </div>
             </nav>
+            
+            <!-- Create Shopping Cart -->        
+            <script>
+            	var count = 0;
+            	function createCart(){
+            		//For future use
+            	}
+            </script>
+            
+            <!-- Update Shopping Cart -->
+            <script>
+            	function updateCart(){
+            		count + 1;
+            		document.getElementById("shoppingBadge").innerHTML = count;
+            	}
+            </script>
             
             <!-- This is Login/Register modal -->
             <div class="modal fade" id="loginregisterModal" tabindex="-1" role="dialog" aria-labelledby="loginregisterModalLabel" aria-hidden="true">
@@ -82,39 +100,5 @@
                         </div>
                     </div>
                 </div>
-            </div>
-<!--
-<nav class="navbar navbar-inverse" style="background-color:#2B5A88;">
-                <div class="container-fluid" style="background-color:#2B5A88;">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px;" href="#">Store Front</a>
-                    </div>
-                    <div class="navbar-header">
-                    <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px;" href="#">Shopping Cart</a>
-                    </div>
-                    <div class="navbar-header">
-                    <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px;" href="#">Wish List</a>
-                    </div>
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" style="color:#B0BCBA; padding-left: 20px;" href="#">Admin</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Add New</a></li>
-                                <li><a href="#">Update</a></li>
-                                <li><a href="#">Delete</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="navbar-form navbar-left" action="controllers/searchHandler.php">
-                        <div class="form-group">
-                            <input style=" background-color:#808088;color:#B0BCBA; padding-left: 20px;" type="text" class="form-control">
-                        </div>
-                        <button style="background-color:#808088; color:#B0BCBA; padding-left: 20px;" type="submit" class="btn btn-default">Search</button>
-                    </form>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a style="color:#B0BCBA; padding-left: 20px;" href="#"><span style="color:#B0BCBA; padding-left: 20px;" class="glyphicon glyphicon-log-in"></span> Login/Register</a></li>
-                    </ul>
-                </div>
-            </nav>       
-     -->                    
+            </div>                
                         

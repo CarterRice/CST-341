@@ -10,7 +10,7 @@ public interface DataAccessInterface <T> {
 	public T findById(int id);
 	public boolean create(T t);
 	public boolean update(T t);
-	public boolean delete(T t);
+	public boolean delete(int id);
 	public boolean loginCheck(User u);
 	
 }

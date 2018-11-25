@@ -36,37 +36,37 @@ public class ApplicationConfiguration {
 	}
 	
 	@Bean(name="UserRegisterService", initMethod="init", destroyMethod="destroy")
-	@Scope(value="request", proxyMode=ScopedProxyMode.TARGET_CLASS)
+	@Scope(value="singleton", proxyMode=ScopedProxyMode.TARGET_CLASS)
 	public RegisterBusinessInterface getUserRegisterService() {
 		return new UserRegisterService();
 	}
 	
 	@Bean(name="UserLoginService", initMethod="init", destroyMethod="destroy")
-	@Scope(value="session", proxyMode=ScopedProxyMode.TARGET_CLASS)
+	@Scope(value="singleton", proxyMode=ScopedProxyMode.TARGET_CLASS)
 	public UserBusinessInterface getUserLoginService() {
 		return new UserLoginService();
 	}
 	
 	@Bean(name="ProductBusinessService", initMethod="init", destroyMethod="destroy")
-	@Scope(value="request", proxyMode=ScopedProxyMode.TARGET_CLASS)
+	@Scope(value="singleton", proxyMode=ScopedProxyMode.TARGET_CLASS)
 	public ProductBusinessInterface getProductBusinessService() {
 		return new ProductBusinessService();
 	}
 	
 	@Bean(name="loginDataService")
-	@Scope(value="session", proxyMode=ScopedProxyMode.TARGET_CLASS)
+	@Scope(value="singleton", proxyMode=ScopedProxyMode.TARGET_CLASS)
 	public DataAccessInterface<User> getLoginDataService() {
 		return new LoginDataService();
 	}
 	
 	@Bean(name="productDataService")
-	@Scope(value="session", proxyMode=ScopedProxyMode.TARGET_CLASS)
+	@Scope(value="singleton", proxyMode=ScopedProxyMode.TARGET_CLASS)
 	public DataAccessInterface<product> getProductDataService() {
 		return new ProductDataService();
 	}
 	
 	@Bean(name="registerDataService")
-	@Scope(value="session", proxyMode=ScopedProxyMode.TARGET_CLASS)
+	@Scope(value="singleton", proxyMode=ScopedProxyMode.TARGET_CLASS)
 	public DataAccessInterface<registerUser> getRegisterDataService() {
 		return new RegisterDataService();
 	}
@@ -82,14 +82,5 @@ public class ApplicationConfiguration {
 		dataSource.setPassword("derby");
 		dataSource.setInitialSize(1);
 		return dataSource;
-		
-//		DataSource dataSource = new DataSource();
-//		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-//		dataSource.setUrl("jdbc:mysql:C:\\MAMP\\db\\mysql");
-//		dataSource.setUsername("root");
-//		dataSource.setPassword("root");
-//		dataSource.setInitialSize(1);
-//		return dataSource;
-		
 	}
 }

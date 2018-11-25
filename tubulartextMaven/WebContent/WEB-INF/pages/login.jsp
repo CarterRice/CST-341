@@ -12,28 +12,42 @@
 
 
 	<h2>Login / Register</h2>
-	
+	<!-- Form for logging in users -->
+	<div id="loginForm">
 	<form:form method="POST" modelAttribute="user" action="loginUser">
 		<table>
 			<tr>							
-				<td><form:label path="username">Username:</form:label></td>			
-				<td><form:input path="username" type="text" name="username" placeholder="Username" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"/><form:errors path="username"/></td>				
+				<td><form:label path="username">Username:</form:label></td>										
 			</tr>
 			<tr>
-				<td><form:label path="password">Password:</form:label></td>
-				<td><form:input path="password" type="text" name="password" placeholder="Password" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"/><form:errors path="password"/></td>
+				<td><form:input path="username" type="text" name="username" placeholder="Username" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"/><form:errors path="username"/></td>
+			</tr>
+			<tr>
+				<td><form:label path="password">Password:</form:label></td>				
 			</tr>						
 			<tr>
+				<td><form:input path="password" type="text" name="password" placeholder="Password" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"/><form:errors path="password"/></td>
+			</tr>
+			<tr>
 				<td colspan="2">
-					<input type="submit" value="Submit"/>
+					<input id="loginSubmit" type="submit" value="Submit"/>
 				</td>
 			</tr>
 		</table>
 		<br/>
 		<form:errors path="*"/>
-	</form:form>	                   
-	
-	<form:form method="POST" modelAttribute="user" action="registerUser">
+	</form:form>
+	</div>
+	<!-- Script to shake the box when something is incorrect, error triggered or the user isn't in the database -->
+	<script>
+		$(document).ready(function(){
+			$( "#loginSubmit" ).click(function() {
+	  			$( "#loginForm" ).effect( "shake" );
+			});
+		});		
+	</script>	                   
+	<!-- Form for users to register -->
+	<form:form id="registerForm" method="POST" modelAttribute="user" action="registerUser">
 		<td><form:label path="username">Username:</form:label></td>
 		<form:input path="username" type="text" name="username" placeholder="Username" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"/><form:errors path="username"/><br><br>
 		<td><form:label path="password">Password:</form:label></td>
@@ -44,8 +58,14 @@
 		<form:input path="lastName" type="text" name="lastname" placeholder="Last name" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"/><form:errors path="lastName"/><br><br>
 		<td><form:label path="email">Email:</form:label></td>
 		<form:input path="email" type="text" name="email" placeholder="Email" style="color:#F0C060;border-color:#F0C060;background-color:#404850;"/><form:errors path="email"/><br><br>
-		<input type="submit" name="Register" value="Register" style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
+		<input id="registerSubmit" type="submit" name="Register" value="Register" style="color:#F0C060;border-color:#F0C060;background-color:#404850;">
 		<form:errors path="*"/>	
-	</form:form>		          
+	</form:form>
+	<!-- Script to shake the box when something is incorrect -->
+	<script>
+		$( #registerSubmit ).click(function() {
+  			$( "#registerForm" ).effect( "shake" );
+		});
+	</script>		          
                                 
 	

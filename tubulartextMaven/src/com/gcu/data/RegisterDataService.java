@@ -52,7 +52,7 @@ public class RegisterDataService implements DataAccessInterface<registerUser> {
 	}
 
 	@Override
-	public boolean delete(registerUser t) {
+	public boolean delete(int t) {
 		// TODO Auto-generated method stub
 		return false;
 	}

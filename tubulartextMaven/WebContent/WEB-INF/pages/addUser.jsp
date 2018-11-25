@@ -16,42 +16,87 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-	<h2 style="color:#B0BCBA;">Login / Register</h2>
+	<!-- Script to shake the box when something is incorrect, error triggered or the user isn't in the database -->
+	<script>
+		$(document).ready(function(){
+			$( "#loginSubmit" ).click(function() {
+	  			$( "#loginForm" ).effect( "shake", {times:4}, 1000 );
+			});
+		});					
+	</script>
 	
+	<h2 style="color:#B0BCBA;">Login / Register</h2>
+	<!-- Form for logging in users -->
 	<div style="display:inline-block;">
-	<form:form method="POST" modelAttribute="user" action="loginUser">
+	<form:form id="loginForm" method="POST" modelAttribute="user" action="loginUser">
 		<table>
 			<tr>									
-				<td><form:input path="username" type="text" name="username" placeholder="Username" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="username"/></td>				
+				<td><form:input path="username" type="text" id="loginUsername" name="username" placeholder="Username" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="username" style="color:red;"/></td>				
 			</tr>
 			<tr>
-				<td><form:input path="password" type="password" name="password" placeholder="Password" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="password"/></td>
+				<td><form:input path="password" type="password" id="loginPassword" name="password" placeholder="Password" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="password" style="color:red;"/></td>
 			</tr>						
 			<tr>				
-				<td><input type="submit" name="Login" value="Login" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"></td>				
+				<td><input id="loginSubmit" type="submit" name="Login" value="Login" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"></td>				
 			</tr>
 		</table>
 		<br/>
 		<form:errors path="*"/>
-	</form:form>	                   
+	</form:form>		                   
 	</div>
+		
+	<!-- User login instant validation -->
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+	<script>
+	$(document).ready(function () {
+
+	    $('#loginForm').validate({ // initialize the plugin
+	        rules: {
+	            "username": {
+	                required: true,
+	                minlength: 2,
+	                maxlength: 30
+	            },
+	            "password": {
+	                required: true,
+	                minlength: 2,
+	                maxlength: 30
+	            }
+	        }
+		    messages: {
+	            "username": {
+	                required: "Username is required!",
+	                minlength: "Username must be at least 2 characters long",
+	                maxlength: "Username cannot be more than 30 characters long"
+	            },
+	            "password": {
+	                required: "Password is required!",
+	                minlength: "Password must be at least 2 characters long",
+	                maxlength: "Password cannot be more than 30 characters long"
+	            }
+	        }
+	    });
+
+	});
+	</script>
+		
 	<div style="display:inline-block; margin-left:20px;">
 	<form:form method="POST" modelAttribute="registerUser" action="registerUser">
 	<table>
 		<tr>
-		<td><form:input path="username" type="text" name="username" placeholder="Username" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="username"/></td>
+		<td><form:input path="username" type="text" id="regUsername" name="username" placeholder="Username" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="username" style="color:red;"/></td>
 		</tr>
 		<tr>
-		<td><form:input path="password" type="text" name="password" placeholder="Password" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="password"/></td>
+		<td><form:input path="password" type="text" id="regPassword" name="password" placeholder="Password" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="password" style="color:red;"/></td>
 		</tr>
 		<tr>
-		<td><form:input path="firstName" type="text" name="firstname" placeholder="First name" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="firstName"/></td>
+		<td><form:input path="firstName" type="text" name="firstname" placeholder="First name" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="firstName" style="color:red;"/></td>
 		</tr>
 		<tr>
-		<td><form:input path="lastName" type="text" name="lastname" placeholder="Last name" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="lastName"/></td>
+		<td><form:input path="lastName" type="text" name="lastname" placeholder="Last name" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="lastName" style="color:red;"/></td>
 		</tr>
 		<tr>
-		<td><form:input path="email" type="text" name="email" placeholder="Email" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="email"/></td>
+		<td><form:input path="email" type="text" name="email" placeholder="Email" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="email" style="color:red;"/></td>
 		</tr>
 		<tr>
 		<td><input type="submit" name="Register" value="Register" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;margin-left:53%;"></td>
@@ -60,5 +105,20 @@
 		<form:errors path="*"/>	
 	</form:form>		   
 	</div>       
-                                
+        
+    <!-- Jquery used to determine if the user has just registered -->            
+	<script>		
+		$(document).ready(function(){
+			
+			alert("You have successfully registered");
+			
+			var registerUsername = document.getElementById("regUsername").value;
+			var registerPassword = document.getElementById("regPassword").value;
+			
+			document.getElementById("loginUsername").value = registerUsername;
+			document.getElementById("loginPassword").value = registerPassword;			
+			
+			});
+	
+	</script>                                
 	

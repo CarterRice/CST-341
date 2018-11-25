@@ -43,8 +43,24 @@ public class ProductDataService implements DataAccessInterface<product> {
 
 	@Override
 	public product findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		product p = new product(0,"FAIL","FAIL","FAIL","FAIL","FAIL");
+		
+		String sql = "SELECT * FROM TUBULARTEXT.PRODUCTS WHERE ID = ?";
+		
+		try {
+			SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql,id);	
+			
+			if(srs.next()) {
+				p = new product(srs.getInt("ID"),srs.getString("NAME"),srs.getString("DESCRIPTION"),srs.getString("PRICE"),srs.getString("IMAGEFILEPATH"),srs.getString("TEXTFILEPATH"));				
+			}					
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}		
+		
+		return p;
+	
 	}
 
 	@Override
@@ -67,10 +83,10 @@ public class ProductDataService implements DataAccessInterface<product> {
 	@Override
 	public boolean update(product t) {
 		
-		String sql = "UPDATE TUBULARTEXT.PRODUCTS (NAME, DESCRIPTION, PRICE, IMAGEFILEPATH, TEXTFILEPATH) VALUES (?,?,?,?,?) WHERE ID = " + t.getId() + ";";
+		String sql = "UPDATE TUBULARTEXT.PRODUCTS SET NAME = '"+ t.getName() +"', DESCRIPTION = '"+ t.getDescription() +"', PRICE = '"+ t.getPrice() +"' WHERE ID = "+ t.getId() +"";
 		
 		try {
-			int rows = jdbcTemplateObject.update(sql,t.getName(),t.getDescription(),t.getPrice(),t.getImageFilePath(),t.getTextFilePath());
+			int rows = jdbcTemplateObject.update(sql);
 			
 			return rows == 1 ? true : false;
 					
@@ -82,11 +98,11 @@ public class ProductDataService implements DataAccessInterface<product> {
 	}
 
 	@Override
-	public boolean delete(product t) {
-String sql = "DELETE FROM TUBULARTEXT.PRODUCTS WHERE ID = " + t.getId() + ";";
+	public boolean delete(int id) {
+		String sql = "DELETE FROM TUBULARTEXT.PRODUCTS WHERE ID = ?";
 		
 		try {
-			int rows = jdbcTemplateObject.update(sql);
+			int rows = jdbcTemplateObject.update(sql,id);
 			
 			return rows == 1 ? true : false;
 					

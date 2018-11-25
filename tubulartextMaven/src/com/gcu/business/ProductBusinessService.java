@@ -40,8 +40,13 @@ public class ProductBusinessService implements ProductBusinessInterface{
 		return dao.update(p);
 	}
 	
-	public boolean delete(product p) {
-		return dao.delete(p);
+	public boolean delete(int id) {
+		return dao.delete(id);
+	}
+
+	@Override
+	public product findById(int id) {
+		return dao.findById(id);
 	}
 
 }

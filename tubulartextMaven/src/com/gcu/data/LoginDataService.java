@@ -68,7 +68,7 @@ public class LoginDataService implements DataAccessInterface<User> {
 	}
 
 	@Override
-	public boolean delete(User t) {
+	public boolean delete(int t) {
 		// TODO Auto-generated method stub
 		return false;
 	}
