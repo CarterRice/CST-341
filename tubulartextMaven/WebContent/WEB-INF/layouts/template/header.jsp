@@ -2,47 +2,33 @@
     pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Library used for the jQuery shake effect -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
-  	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  	<!-- JQuery Validation -->
-  	<script src="js/jquery.validate.js"></script>
-    
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>		
     
     		<nav class="navbar navbar-inverse" style="background-color:#2B5A88;">
                 <div class="container-fluid" style="background-color:#2B5A88;">
                     <div class="navbar-header">
+                    	<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
                         <a class="navbar-brand" style="color:#B0BCBA; padding-left: 20px; padding-top:16px;" href="/tubulartextMaven/product/view">Store Front</a>
                     </div>                    
-                    		            			                           
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" style="color:#B0BCBA; padding-left: 20px; font-size: larger;" href="#">Admin</a>
-                            <ul class="dropdown-menu">                            	
-                                <li><a href="/tubulartextMaven/product/add">Add New</a></li>
-                                <li><a href="/tubulartextMaven/product/updateView">Update/Delete Product</a></li>                                
-                            </ul>
-                        </li>
-                    </ul>                    
-                    <form class="navbar-form navbar-left" action="controllers/searchHandler.php">
-                        <div class="form-group">
-                            <input style=" background-color:#808088;color:#B0BCBA; padding-left: 20px;" type="text" class="form-control">
-                        </div>
-                        <button style="background-color:#808088; color:#B0BCBA; padding-left: 20px; font-size: larger;" type="submit" class="btn btn-default">Search</button>
-                    </form>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a style="color:#B0BCBA; padding-left: 20px; font-size: larger;" data-toggle="modal" data-target="#shoppingCartModal" href="#"><span id="shoppingBadge" class="badge" style="color:#2B5A88;">0</span> Shopping Cart</a></li>
-                    </ul>
+                   	<div id="navbarCollapse" class="collapse navbar-collapse">    			                           
+	                    <ul class="nav navbar-nav">
+	                        <li class="dropdown">
+	                            <a class="dropdown-toggle" data-toggle="dropdown" style="color:#B0BCBA; padding-left: 20px; font-size: larger;" href="#">Admin</a>
+	                            <ul class="dropdown-menu">                            	
+	                                <li><a href="/tubulartextMaven/product/add">Add New</a></li>
+	                                <li><a href="/tubulartextMaven/product/updateView">Update/Delete Product</a></li>                                
+	                            </ul>
+	                        </li>
+	                    </ul>                                        
+	                    <ul class="nav navbar-nav navbar-right">
+	                        <li><a style="color:#B0BCBA; padding-left: 20px; font-size: larger;" data-toggle="modal" data-target="#shoppingCartModal" href="#"><span id="shoppingBadge" class="badge" style="color:#2B5A88;">0</span> Shopping Cart</a></li>
+	                    </ul>
+                    </div>
                 </div>
             </nav>
             

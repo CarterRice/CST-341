@@ -30,7 +30,7 @@
 			<tr>
 				<td><form:input path="imageFilePath" type="file" id="imageFilePath" name="imageFilePath" accept=".png, .jpg" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/><form:errors path="imageFilePath"/></td>				
 				<!--<td><input type="file" id="imageFilePath1" name="imageFilePath1" accept=".png, .jpg" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"/></td>-->
-				<td><form:input path="imageFilePath" type="hidden" id="imageFilePath" name="imageFilePath" value="/tubulartext/WebContent/uploadedFiles/images/base.jpg" /><form:errors path="imageFilePath"/></td>
+				<td><form:input path="imageFilePath" type="hidden" id="imageFilePath" name="imageFilePath"/><form:errors path="imageFilePath"/></td>
 			</tr>
 			<tr>
 				<td><form:label path="textFilePath" style="color:#B0BCBA;">Upload Text File</form:label></td>
@@ -38,7 +38,7 @@
 			<tr>
 				<td><form:input path="textFilePath" type="file" id="textFilePath" name="textFilePath" accept=".txt" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;" /><form:errors path="textFilePath"/></td>				
 				<!--<td><input type="file" id="textFilePath1" name="textFilePath1" accept=".txt" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;" /></td>-->
-				<td><form:input path="textFilePath" type="hidden" id="textFilePath" name="textFilePath" value="/tubulartext/WebContent/uploadedFiles/textFiles/funFact.txt" /><form:errors path="textFilePath"/></td>
+				<td><form:input path="textFilePath" type="hidden" id="textFilePath" name="textFilePath"/><form:errors path="textFilePath"/></td>
 			</tr>						
 			<tr>				
 				<td><input type="submit" name="Product" value="Create" style="color:#B0BCBA;border-color:#B0BCBA;background-color:#2B5A88;"></td>				
