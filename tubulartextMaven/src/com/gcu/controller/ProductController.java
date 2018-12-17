@@ -42,6 +42,13 @@ public class ProductController {
 		return new ModelAndView("addProduct", "product", new product(0,"","","",null,null,""));
 	}
 	
+	/**
+	 * Controller for updating a product in the database.
+	 *
+	 * @param  The product model
+	 * @param  Results of input
+	 * @return	Model and view is returned (Store Front page upon a successful update)
+	 */
 	@RequestMapping(path="/view", method=RequestMethod.GET)
 	public ModelAndView displayProducts() {
 		List<product> products = new ArrayList<product>();
@@ -51,6 +58,12 @@ public class ProductController {
 		return new ModelAndView("newStoreFront").addObject("products", products);
 	}
 	
+	/**
+	 * Controller for displaying the update view where a user can update or delete products.
+	 *
+	 * @param  Path
+	 * @return	Model and view is returned (Update Front page upon a successful update)
+	 */
 	@RequestMapping(path="/updateView", method=RequestMethod.GET)
 	public ModelAndView displayUpdateForm() {
 		List<product> products = new ArrayList<product>();
