@@ -12,5 +12,6 @@ public interface DataAccessInterface <T> {
 	public boolean update(T t);
 	public boolean delete(int id);
 	public boolean loginCheck(User u);
+	boolean findByUsername(String username);
 	
 }

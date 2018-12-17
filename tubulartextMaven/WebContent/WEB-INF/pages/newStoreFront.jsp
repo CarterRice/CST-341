@@ -12,11 +12,13 @@
 </script>
 
     <h2>Welcome to the Store Front</h2>	
+
 	<div class="container">
-		<div class="row" style="margin-left:2px;">
+		<div class="row">
 			<c:forEach var="product" items="${products}">				
-				<div id="newProduct" class="col-xs-6" style="background-color:#B0BCBA; border:solid 1px; border-color: black; border-radius: 5px; margin: 0px auto; width:360px;padding-bottom:20px;margin-left:10px;margin-right:10px; margin-top:10px; margin-bottom:10px;">
-		    		<img alt="" src="<c:url value="/WebContent/uploadedFiles/imageFiles/95edd9f8545a633e9e9b92e9f6681e61.png"/>" style="width:320px;height:200px;padding-top:20px;" />
+				<div id="newProduct" class="col-xs-12 col-lg-4" style="background-color:#B0BCBA; border:solid 1px; border-color: black; border-radius: 5px; margin: 0px auto; width:360px;padding-bottom:20px;margin:5px;">
+		    		<!--<img alt="" src="<c:url value="C:\CST341\tubulartextMaven\WebContent\uploadedFiles\imageFiles\95edd9f8545a633e9e9b92e9f6681e61.png"/>" style="width:320px;height:200px;padding-top:20px;" /> -->		    		
+		    		<img src="data:image/jpeg;base64,${product.base64Encoded}" style="width:320px;height:200px;padding-top:20px;"/>
 		        	<h3 style="color:#2B5A88; padding-top:20px;">
 		        	    ${product.name}
 					</h3>
@@ -24,7 +26,7 @@
 						${product.description}
 					</p>
 					<h5 style="color:#2B5A88;">
-						${product.price}
+						$${product.price}
 					</h5>
 					<div class="row">
 						<div class="col-md-6">
@@ -33,12 +35,14 @@
 							</button>
 						</div>
 						<div class="col-md-6">
+							<a href="/tubulartextMaven/WebContent/WEB-INF/uploadedFiles/textFiles/funFact.txt" download="funFact">
 							<button type="button" class="btn btn-block" style="color:#808088;border-color:#808088;background-color:#2B5A88;" formaction="textFiles/computerJoke.txt">
-								Add to Wishlist
+								Instant Download
 							</button>
-						</div>
+							</a>
+						</div>						
 					</div>                  
-		   		</div>		   		
+		   		</div>				   			
 		   		<!-- Animation for adding a product to the shopping cart -->
 		   		<script> 		   		
 					$(document).ready(function(){

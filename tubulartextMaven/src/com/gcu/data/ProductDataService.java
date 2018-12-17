@@ -11,7 +11,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
-import com.gcu.mapping.ProductMapper;
 import com.gcu.model.User;
 import com.gcu.model.product;
 
@@ -31,7 +30,8 @@ public class ProductDataService implements DataAccessInterface<product> {
 			SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql);	
 			
 			while(srs.next()) {
-				products.add(new product(srs.getInt("ID"),srs.getString("NAME"),srs.getString("DESCRIPTION"),srs.getString("PRICE"),srs.getString("IMAGEFILEPATH"),srs.getString("TEXTFILEPATH")));
+				//products.add(new product(srs.getInt("ID"),srs.getString("NAME"),srs.getString("DESCRIPTION"),srs.getString("PRICE"),srs.getString("IMAGEFILEPATH"),srs.getString("TEXTFILEPATH")));
+				products.add(new product(srs.getInt("ID"),srs.getString("NAME"),srs.getString("DESCRIPTION"),srs.getString("PRICE"),null,null,srs.getString("ENCODE")));
 			}
 					
 		}catch(Exception e){
@@ -44,7 +44,7 @@ public class ProductDataService implements DataAccessInterface<product> {
 	@Override
 	public product findById(int id) {
 		
-		product p = new product(0,"FAIL","FAIL","FAIL","FAIL","FAIL");
+		product p = new product(0,"FAIL","FAIL","FAIL",null,null,"");
 		
 		String sql = "SELECT * FROM TUBULARTEXT.PRODUCTS WHERE ID = ?";
 		
@@ -52,7 +52,8 @@ public class ProductDataService implements DataAccessInterface<product> {
 			SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql,id);	
 			
 			if(srs.next()) {
-				p = new product(srs.getInt("ID"),srs.getString("NAME"),srs.getString("DESCRIPTION"),srs.getString("PRICE"),srs.getString("IMAGEFILEPATH"),srs.getString("TEXTFILEPATH"));				
+				//p = new product(srs.getInt("ID"),srs.getString("NAME"),srs.getString("DESCRIPTION"),srs.getString("PRICE"),srs.getString("IMAGEFILEPATH"),srs.getString("TEXTFILEPATH"));
+				p = new product(srs.getInt("ID"),srs.getString("NAME"),srs.getString("DESCRIPTION"),srs.getString("PRICE"),null,null,srs.getString("ENCODE"));				
 			}					
 			
 		}catch(Exception e){
@@ -123,6 +124,12 @@ public class ProductDataService implements DataAccessInterface<product> {
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 		this.jdbcTemplateObject = new JdbcTemplate(dataSource);
+	}
+
+	@Override
+	public boolean findByUsername(String username) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

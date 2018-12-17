@@ -16,26 +16,30 @@ public class product {
 	@Size(min=1, max=10, message="Name must be at least 1 characters long and less than 10 characters")
 	private String price;
 	@NotNull(message="A .png or .jpg is required")
-	private String imageFilePath;
+	private byte[] imageFilePath;
 	@NotNull(message="A .txt is required")
-	private String textFilePath;
+	private byte[] textFilePath;
+	
+	private String base64Encoded;
 	
 	public product() {
 		this.id = 0;
 		this.name = "";
 		this.description = "";
 		this.price = "";
-		this.imageFilePath = "";
-		this.textFilePath = "";
+		this.imageFilePath = null;
+		this.textFilePath = null;
+		this.base64Encoded = "";
 	}
 	
-	public product(int Id, String Name, String Description, String Price, String ImageFilePath, String TextFilePath) {
+	public product(int Id, String Name, String Description, String Price, byte[] ImageFilePath, byte[] TextFilePath, String base64Encoded) {
 		this.id = Id;
 		this.name = Name;
 		this.description = Description;
 		this.price = Price;
 		this.imageFilePath = ImageFilePath;
 		this.textFilePath = TextFilePath;
+		this.base64Encoded = base64Encoded;
 	}
 	
 	public int getId() {
@@ -70,22 +74,27 @@ public class product {
 		this.price = price;
 	}
 
-	public String getImageFilePath() {
+	public byte[] getImageFilePath() {
 		return imageFilePath;
 	}
 
-	public void setImageFilePath(String imageFilePath) {
+	public void setImageFilePath(byte[] imageFilePath) {
 		this.imageFilePath = imageFilePath;
 	}
 
-	public String getTextFilePath() {
+	public byte[] getTextFilePath() {
 		return textFilePath;
 	}
 
-	public void setTextFilePath(String textFilePath) {
+	public void setTextFilePath(byte[] textFilePath) {
 		this.textFilePath = textFilePath;
 	}
-	
-	
-	
+
+	public String getBase64Encoded() {
+		return base64Encoded;
+	}
+
+	public void setBase64Encoded(String base64Encoded) {
+		this.base64Encoded = base64Encoded;
+	}
 }

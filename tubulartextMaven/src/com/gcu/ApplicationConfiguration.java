@@ -1,10 +1,16 @@
 package com.gcu;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.http.MediaType;
+import org.springframework.http.converter.ByteArrayHttpMessageConverter;
+import org.springframework.http.converter.HttpMessageConverter;
 
 import com.gcu.business.ProductBusinessInterface;
 import com.gcu.business.ProductBusinessService;
@@ -82,5 +88,25 @@ public class ApplicationConfiguration {
 		dataSource.setPassword("derby");
 		dataSource.setInitialSize(1);
 		return dataSource;
+	}
+	
+	//Methods used to convert for image display
+	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+	    converters.add(byteArrayHttpMessageConverter());
+	}
+	 
+	@Bean
+	public ByteArrayHttpMessageConverter byteArrayHttpMessageConverter() {
+	    ByteArrayHttpMessageConverter arrayHttpMessageConverter = new ByteArrayHttpMessageConverter();
+	    arrayHttpMessageConverter.setSupportedMediaTypes(getSupportedMediaTypes());
+	    return arrayHttpMessageConverter;
+	}
+	 
+	private List<MediaType> getSupportedMediaTypes() {
+	    List<MediaType> list = new ArrayList<MediaType>();
+	    list.add(MediaType.IMAGE_JPEG);
+	    list.add(MediaType.IMAGE_PNG);
+	    list.add(MediaType.APPLICATION_OCTET_STREAM);
+	    return list;
 	}
 }

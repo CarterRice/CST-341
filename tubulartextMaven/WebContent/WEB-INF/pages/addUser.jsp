@@ -23,7 +23,7 @@
 					  			$( "#loginForm" ).effect( "shake", {times:4}, 1000 );
 							});
 						});					
-					</script>	
+					</script>
 					<!-- Form for logging in users -->
 					<div style="display:inline-block;">
 					<form:form id="loginForm" method="POST" modelAttribute="user" action="loginUser">
@@ -193,10 +193,19 @@
 			//alert("You have successfully registered");
 			//Variables for username and password
 			var registerUsername = document.getElementById("regUsername").value;
-			var registerPassword = document.getElementById("regPassword").value;
-			//Populating login Username and Password 
-			document.getElementById("loginUsername").value = registerUsername;
-			document.getElementById("loginPassword").value = registerPassword;			
+			var registerPassword = document.getElementById("regPassword").value;						
+			
+			if(registerUsername == "ERROR"){
+				alert("User already exists!");
+				document.getElementById("regUsername").value = "";
+			}else if(document.getElementById("loginUsername").value == "ERROR"){
+				alert("Incorrect Username or Password!");
+				document.getElementById("loginUsername").value = "";
+			}else{
+				//Populating login Username and Password 
+				document.getElementById("loginUsername").value = registerUsername;
+				document.getElementById("loginPassword").value = registerPassword;		
+			}								
 			
 			});
 	

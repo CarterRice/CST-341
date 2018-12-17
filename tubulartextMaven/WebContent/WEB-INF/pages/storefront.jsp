@@ -6,7 +6,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-    <h2>Welcome to the Store Front</h2>
+    <h2>You Are Logged In!</h2>
 	<table>
 	
 		

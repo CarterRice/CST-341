@@ -1,10 +1,12 @@
 package com.gcu.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
 
+import org.sonatype.plexus.components.cipher.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,6 +21,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.gcu.business.ProductBusinessInterface;
 import com.gcu.model.product;
+
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 // Product object parameters String Name, String Description, String Price, String ImageFilePath, String TextFilePath
 
 @Controller
@@ -34,7 +38,8 @@ public class ProductController {
 	
 	@RequestMapping(path="/add", method=RequestMethod.GET)
 	public ModelAndView displayForm() {
-		return new ModelAndView("addProduct", "product", new product(0,"","","","",""));
+		//throw new RuntimeException("Dummy Exception");
+		return new ModelAndView("addProduct", "product", new product(0,"","","",null,null,""));
 	}
 	
 	@RequestMapping(path="/view", method=RequestMethod.GET)
@@ -54,26 +59,48 @@ public class ProductController {
 		
 		return new ModelAndView("updateProduct").addObject("products", products);
 	}
-	//Create a new Product
+
+	/**
+	 * Controller for creating a new product in the database.
+	 *
+	 * @param  The product model
+	 * @param  Results of input
+	 * @return	Model and view is returned (The confirmation page upon successful creation)
+	 */
 	@RequestMapping(path="/newProduct", method=RequestMethod.POST)
-	public ModelAndView addProduct(@Valid @ModelAttribute("addProduct") product newProduct, BindingResult result, @RequestParam MultipartFile textFile, @RequestParam MultipartFile imageFile, ModelMap modelMap) {			
+	public ModelAndView addProduct(@Valid @ModelAttribute("addProduct") product newProduct, BindingResult result) {	
+		//Check for errors
 		if(result.hasErrors()) {
 			return new ModelAndView("storefront", "newProduct", newProduct);
-		}else {		
-			modelMap.addAttribute("textFilePath", textFile);
-			modelMap.addAttribute("imageFilePath", imageFile);
-			if(ProductService.test(newProduct) == true) {
-				List<product> products = new ArrayList<product>();
+		}else {				
+			//Check to make sure a text file was submitted and there are bytes to transfer
+			if((newProduct.getTextFilePath() != null)&&(newProduct.getTextFilePath().length > 0)&&(!newProduct.getTextFilePath().equals(""))) {																			
 				
-				products = ProductService.findAll();
-				
-				return new ModelAndView("newStoreFront").addObject("products", products);
+				//If there is a file then the model is sent to the business service like usual
+				if(ProductService.test(newProduct) == true) {
+					
+					List<product> products = new ArrayList<product>();
+					
+					products = ProductService.findAll();
+					
+					return new ModelAndView("newStoreFront").addObject("products", products);
+					
+				}else {
+					return new ModelAndView("storefront", "newProduct", newProduct);
+				}
 			}else {
 				return new ModelAndView("storefront", "newProduct", newProduct);
-			}
+			}			
 		}
 	}
 	
+	/**
+	 * Controller for updating a product in the database.
+	 *
+	 * @param  The product model
+	 * @param  Results of input
+	 * @return	Model and view is returned (Store Front page upon a successful update)
+	 */
 	@RequestMapping(path="/updateProduct", method=RequestMethod.POST)
 	public ModelAndView updateProduct(@Valid @ModelAttribute("product") product updateProduct, BindingResult result) {
 		if(result.hasErrors()) {
@@ -91,6 +118,12 @@ public class ProductController {
 		}
 	}
 	
+	/**
+	 * Controller for determining which product is to be updated.
+	 *
+	 * @param  HTTP GET argument
+	 * @return	Model and view is returned (Update page to update product)
+	 */
 	@RequestMapping(path="/update/{argument}", method=RequestMethod.GET)
 	public ModelAndView updateFormProduct(@PathVariable("argument") String argument) {
 		int id = Integer.parseInt(argument);
@@ -102,6 +135,12 @@ public class ProductController {
 		return new ModelAndView("updateProductForm", "product", p);
 	}
 	
+	/**
+	 * Controller for directing user to product deletion page
+	 *
+	 * @param  HTTP GET argument
+	 * @return	Model and view is returned (Delete page to delete product)
+	 */
 	@RequestMapping(path="/delete/{argument}", method=RequestMethod.GET)
 	public ModelAndView deleteProduct(@PathVariable("argument") String argument) {
 		int id = Integer.parseInt(argument);

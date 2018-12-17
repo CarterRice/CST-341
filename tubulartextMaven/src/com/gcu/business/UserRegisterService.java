@@ -3,6 +3,7 @@ package com.gcu.business;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.gcu.data.DataAccessInterface;
+import com.gcu.model.User;
 import com.gcu.model.registerUser;
 
 public class UserRegisterService implements RegisterBusinessInterface {
@@ -11,9 +12,17 @@ public class UserRegisterService implements RegisterBusinessInterface {
 	@Autowired
 	DataAccessInterface<registerUser> dao;
 	
+	//Used for checking if a user already exists
+	@Autowired
+	DataAccessInterface<User> daoCheck;
+	
 	@Override
-	public boolean test(registerUser u) {
-		return dao.create(u);
+	public boolean test(registerUser u) {		
+		if(daoCheck.findByUsername(u.getUsername())) {
+			return false;
+		}else {
+			return dao.create(u);
+		}		
 	}
 
 	@Override

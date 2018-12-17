@@ -69,4 +69,10 @@ public class RegisterDataService implements DataAccessInterface<registerUser> {
 		this.jdbcTemplateObject = new JdbcTemplate(dataSource);
 	}
 
+	@Override
+	public boolean findByUsername(String username) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

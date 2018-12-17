@@ -4,7 +4,7 @@
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>		
     
-    		<nav class="navbar navbar-inverse" style="background-color:#2B5A88;">
+    		<nav class="navbar navbar-default navbar-expand-xs" style="background-color:#2B5A88;">
                 <div class="container-fluid" style="background-color:#2B5A88;">
                     <div class="navbar-header">
                     	<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
@@ -26,7 +26,8 @@
 	                        </li>
 	                    </ul>                                        
 	                    <ul class="nav navbar-nav navbar-right">
-	                        <li><a style="color:#B0BCBA; padding-left: 20px; font-size: larger;" data-toggle="modal" data-target="#shoppingCartModal" href="#"><span id="shoppingBadge" class="badge" style="color:#2B5A88;">0</span> Shopping Cart</a></li>
+	                        <li><a style="color:#B0BCBA; padding-left: 20px; font-size: larger;" href="#"><span id="shoppingBadge" class="badge" style="color:#2B5A88;">0</span> Shopping Cart</a></li>
+	                        <li><a style="color:#B0BCBA; padding-left: 20px; font-size: larger;" href="/tubulartextMaven/user/add">Log Out</a></li>
 	                    </ul>
                     </div>
                 </div>

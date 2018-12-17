@@ -23,9 +23,32 @@ public class LoginDataService implements DataAccessInterface<User> {
 	}
 
 	@Override
-	public User findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean findByUsername(String username) {
+		
+		String sql = "SELECT ID, USERNAME, PASSWORD, ADMIN FROM TUBULARTEXT.USERS WHERE USERNAME='" + username +"'";
+		
+		try {
+			
+			SqlRowSet rows = jdbcTemplateObject.queryForRowSet(sql);	
+			
+			int count = 0;
+			
+			while(rows.next()) {
+				count++;
+			}
+			
+			if(count != 1) {
+				return false;
+			}else {
+				return true;
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return false;
+		
 	}
 		
 	public boolean loginCheck(User t) {
@@ -77,6 +100,12 @@ public class LoginDataService implements DataAccessInterface<User> {
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 		this.jdbcTemplateObject = new JdbcTemplate(dataSource);
+	}
+
+	@Override
+	public User findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
